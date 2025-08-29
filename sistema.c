@@ -6,40 +6,55 @@ int main(void)
 {
 	srand(time(NULL));
 	int escolha;
-	int resultTotal = 0;
+	// int resultTotal = 0;
 	int resultado;
 	
 	do
 	{
-	printf("\nEscolha seu dado: \n1 - D4\n2 - D6\n3 - D8\n4 - D10\n5 - D12\n6 - D20\n7 - D100\n8 - Sair\n");
-	scanf("%i", &escolha);
-	
-		if(escolha == 1)
-		{
-			RollD4();
-			resultTotal = resultTotal + resultado;
-			printf("Seu total atual e: %i\n", resultTotal);
-		}else if(escolha == 2)
-		{
-			RollD6();
-		}else if(escolha == 3)
-		{
-			RollD8();
-		}else if(escolha == 4)
-		{
-			RollD10();
-		}else if(escolha == 5)
-		{
-			RollD12();
-		}else if(escolha == 6)
-		{
-			RollD20();
-		}else if(escolha == 7)
-		{
-			RollD100();
-		}
-	
-	} while(escolha < 8);
+		printf("\n1 - D4\n2 - D6\n3 - D8\n4 - D10\n5 - D12\n6 - D20\n7 - D100\n8 - Sair\n");
+		printf("\nEscolha seu dado: ");
+		scanf("%i", &escolha);
+		
+		if(escolha)
+			switch(escolha)
+			{	
+				case 1:
+					RollD4();
+					break;
+					// resultTotal = resultTotal + resultado;
+					// printf("Seu total atual e: %i\n", resultTotal);
+					
+				case 2:
+					RollD6();
+					break;
+			
+				case 3:
+					RollD8();
+					break;
+				
+				case 4:
+					RollD10();
+					break;
+					
+				case 5:
+					RollD12();
+					break;
+					
+				case 6:
+					RollD20();
+					break;
+					
+				case 7:
+					RollD100();
+					break;
+				
+				default:
+					printf("Escolha invalida!");
+			}
+		else 
+		printf("Escolha invalida");
+		
+	}while(escolha != 8);
 	
 	return 0;
 }
